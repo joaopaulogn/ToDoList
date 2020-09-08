@@ -1,0 +1,27 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Todo list for learning",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaopaulogn/todo-list.git"
+  },
+  "keywords": [
+    "todo",
+    "todo-list",
+    "tasks"
+  ],
+  "author": "João Paulo Gonçalves Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaopaulogn/todo-list/issues"
+  },
+  "homepage": "https://github.com/joaopaulogn/todo-list#readme",
+  "devDependencies": {
+    "electron": "^10.1.1"
+  }
+}
