@@ -7,15 +7,11 @@ const $list = document.querySelector('.list');
 // Add a task by click
 function handleClick() {
     if ($input.value !== '') {
-        createElements($input.value);
         $list.classList.add('active');
+        createElements($input.value);
     } else {
-        const _alert = document.createElement('div');
-        _alert.classList.add('alert');
-
-        document.querySelector('.wrapper')
-            .appendChild(_alert)
-            .innerText = 'Please, enter some kind of word...';
+        document.querySelector('.alert')
+            .innerText = 'Please, type some text.'
     }
 
     $input.value = '';
@@ -33,11 +29,15 @@ function handleCheck() {
     const _item = this.parentElement.parentElement;
 
     if (this.checked) {
-        this.setAttribute('chekced', true);
+        // That strikes the text selected
         _text.classList.add('checked');
+        // That insert the element checked on the last position
         $list.insertBefore(_item, $list.lastElementChild.nextElementSibling);
+        // That set the checkbox as selected
+        this.setAttribute('checked', true);
     } else {
         _text.classList.remove('checked');
+        this.removeAttribute('checked');
     }
 }
 
@@ -60,7 +60,7 @@ function createElements(text) {
         <div class="listBox">
             <li class="item">
                 <span>${text}</span>
-                <input type="checkbox" name="checkbox" id="chekbox" class="${inputClass}">
+                <input type="checkbox" class="${inputClass}">
             </li>
             <button type="submit" class="${btnClass}">X</button>
         </div>`
