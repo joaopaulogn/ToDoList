@@ -6,12 +6,15 @@ const $list = document.querySelector('.list');
 // Functions activated by events
 // Add a task by click
 function handleClick() {
-    if ($input.value !== '') {
-        $list.classList.add('active');
-        createElements($input.value);
+    if ($input.value === '') {
+        document.querySelector('.alert')
+        .innerText = 'Please, type some text.'
     } else {
         document.querySelector('.alert')
-            .innerText = 'Please, type some text.'
+        .innerText = '';
+
+        $list.classList.add('active');
+        createElements($input.value);
     }
 
     $input.value = '';
